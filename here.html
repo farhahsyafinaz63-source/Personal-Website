@@ -1,0 +1,508 @@
+<html>
+<head>
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            background-color: #f9f6f0;
+            color: #333;
+        }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff66b2;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+        /* 🌸 Animation Keyframes */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+       
+        header {
+            background-image: url('hehe.jpg');
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 4px;
+            margin: 0;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+
+        nav {
+            background-color: #dff8df;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff66b2;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+ .favorites {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 50px;
+            text-align: center;
+        }
+
+        .fav-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .fav-column {
+            background: #dff8df;
+            border-radius: 12px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .fav-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+	.fav-item audio {
+    	width: 250px; 
+    	margin-top: 3px;
+	}
+
+.center-text {
+    max-width: 950px;   
+    margin: 0 auto;    
+    text-align: center; 
+    line-height: 1.6;   
+}
+    
+       #education {
+    background-color: #dff8df;
+    padding: 40px 0;
+}
+
+.education-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.edu-photo {
+    background: white; 
+    border: 2px solid #dff8df;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 280px;
+    text-align: center;
+    overflow: hidden;
+}
+
+        .edu-photo img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        
+        .skills .box {
+            background: white;
+            border: 2px solid #dff8df;
+            border-radius: 10px;
+            padding: 15px;
+            width: 30%;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .skill-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+.skill-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+}
+
+.skill-row {
+    background: white;
+    border: 2px solid #dff8df;
+    border-radius: 10px;
+    padding: 15px 20px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skill-name {
+    font-weight: bold;
+    width: 30%;
+    font-size: 16px;
+}
+
+.skill-bar {
+    width: 60%;
+    height: 12px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: #8fd19e;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+.skill-percent {
+    width: 10%;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+        .hobbies {
+            background-color: #dff8df;
+            padding: 40px 60px;
+        }
+
+        .hobby-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hobby-photo {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            width: 280px;
+            text-align: center;
+        }
+
+        .hobby-photo img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+        }
+
+        footer {
+            background-color: #2e3b36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info {
+                max-width: 100%;
+            }
+            .box, .edu-photo, .hobby-photo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+<header>
+        <h1>All ABOUT THE GIRL BEHIND THE PAGE</h1>
+        <p>🥰 A LITTLE STORY ABOUT ME 🥰</p>
+    </header>
+
+
+    <nav>
+        <a href="about.html">Farhah</a>
+        <a href="here.html">About Me</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friend</a>
+        <a href="collection.html">Collection</a>
+    </nav>
+
+    <!-- Favorites -->
+    <section class="favorites">
+      <h2>📸 Things I Love 📸</h2>
+      <div class="fav-container">
+        <div class="fav-column">
+          <h3>🎨 Color I Love 🎨</h3>
+          <div class="fav-item">
+            <img src="black1.jpg" alt="Favorite Color 1">
+            <p>I love black color because it is suitable for all colors.</p>
+          </div>
+          <div class="fav-item">
+            <img src="dark1.jpg" alt="Favorite Color 2">
+            <p>Dark green reminds me of nature and trees.</p>
+          </div>
+        </div>
+
+        <div class="fav-column">
+          <h3>🎵 Music I Enjoyc 🎵</h3>
+          <div class="fav-item">
+    <img src="no.jpg" alt="Favorite Music 1">
+    <p>No Blueberries by DPR IAN, this is my favorite singer.</p>
+    <audio controls>
+      <source src="berry.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="fav-item">
+    <img src="manchild.jpg" alt="Favorite Music 2">
+    <p>Manchild by Sabrina Carpenter</p>
+    <audio controls>
+      <source src="manchild.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+        </div>
+
+        <div class="fav-column">
+          <h3>🌴 A Place I Love 🌴</h3>
+          <div class="fav-item">
+            <img src="switzerland.jpg" alt="Place 1">
+            <p>Switzerland, best for skiing, hiking, and stunning views.</p>
+          </div>
+          <div class="fav-item">
+            <img src="japan.jpg" alt="Place 2">
+            <p>Japanese people take excellent care of their things.</p>
+          </div>
+        </div>
+
+        <div class="fav-column">
+          <h3>🐾 Beloved Animal 🐾</h3>
+          <div class="fav-item">
+            <img src="udin.jpg" alt="Pet 1">
+            <p>This is my guinea pig, Udin. He’s playful and sweet.</p>
+          </div>
+          <div class="fav-item">
+            <img src="cepet.jpg" alt="Pet 2">
+            <p>This is my cat, Cepet. He loves cuddles!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <center>
+            <h2>📚 Journey Of Knowledge 📚</h2>
+            <p class="center-text"> When I high school, I was school at SMK Keningau II at Keningau, Sabah. Throughout my studies, I have gained various experiences from being corrected by teachers, skipping classes, being active to joining events and competitions rather than focusing on the classroom. After I finished my Sijil Pelajaran Malaysia (SPM), I received an 8A and 1B, and I'm currently studying at Universiti Teknologi Mara. I studied a Diploma in Information Management. This diploma is about libraries, records, archives, coding, and computers. It's not that hard to study this course if you like being in the library or know about records. So far, I'm rating this diploma 8/10 because this is not my top 1 pick. Here are some memorable moments from my education journey:</p>
+            <div class="education-gallery">
+                <div class="edu-photo">
+                    <img src="highschool.jpg" alt="School Photo 1">
+                    <p>My high school days were full of unforgettable experiences.</p>
+                </div>
+                <div class="edu-photo">
+                    <img src="work.jpg" alt="School Photo 2">
+                    <p>During my diploma, I learned teamwork and discipline.</p>
+                </div>
+                <div class="edu-photo">
+                    <img src="present.jpg" alt="School Photo 3">
+                    <p>Presenting my individual project during college week.</p>
+                </div>
+            </div>
+        </center>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+<center>
+        <h2>💻 Talents And Strengths 💻</h2>
+<center>
+        <p class="center-text"> I have a variety of skills that help me in both school and personal projects. I can create websites using HTML and CSS, do basic coding, and design creative graphics with Canva. I’m also proficient in Microsoft Office, which allows me to make documents, presentations, and organize information efficiently. Currently, I am holding the position of Multimedia in Komander Kesatria UiTM, where I have gained experience in Canva and editing, improving my creativity and technical skills. These experiences help me learn new things, solve problems, and express my ideas in different ways.</p>
+        <div class="skill-boxes">
+
+    <div class="skill-row">
+        <div class="skill-name">HTML</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+        <div class="skill-percent">90%</div>
+    </div>
+
+    <div class="skill-row">
+        <div class="skill-name">CSS</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+        <div class="skill-percent">85%</div>
+    </div>
+
+    <div class="skill-row">
+        <div class="skill-name">Microsoft Office</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+        <div class="skill-percent">95%</div>
+    </div>
+
+    <div class="skill-row">
+        <div class="skill-name">Canva Design</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+        <div class="skill-percent">90%</div>
+    </div>
+
+    <div class="skill-row">
+        <div class="skill-name">Communication</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <div class="skill-percent">80%</div>
+    </div>
+
+    <div class="skill-row">
+        <div class="skill-name">Teamwork</div>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+        <div class="skill-percent">85%</div>
+    </div>
+
+</div>
+    </section>
+<br>s
+
+    <!-- Hobbies -->
+    <section id="hobbies" class="hobbies">
+<center>
+        <h2>🎮 Little Things I Cherish 🎮</h2>
+<center>
+        <p class="center-text"> I have a variety of hobbies that keep me active, entertained, and motivated. I enjoy reading books because they let me explore new ideas and learn about different worlds. Running is another hobby I love, as it helps me stay fit and clears my mind. I also spend time playing games like Valorant, which challenge my strategy and teamwork skills. On top of that, I really enjoy going hiking with my team. It’s a great way to enjoy nature, stay active, and bond with friends while overcoming challenges together.:</p>
+<br>
+        <div class="hobby-gallery">
+            <div class="hobby-photo">
+                <img src="book3.jpg" alt="Hobby 1">
+                <p>I love reading books during my free time.</p>
+            </div>
+            <div class="hobby-photo">
+                <img src="val.jpg" alt="Hobby 2">
+                <p>I play a lot of video games.</p>
+            </div>
+	    <div class="hobby-photo">
+                <img src="run1.jpg" alt="Hobby 2">
+                <p>I run 5 times a week.</p>
+            </div>
+
+            <div class="hobby-photo">
+                <img src="hike2.jpg" alt="Hobby 3">
+                <p>Spending time outdoors, especially hiking.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Nur Farhah. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+

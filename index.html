@@ -1,0 +1,341 @@
+<html>
+<head>
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            background-color: #f9f6f0;
+            color: #333;
+        }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff66b2;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+        /* 🌸 Animation Keyframes */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+ 
+
+       
+        header {
+            background-image: url('hehe.jpg');
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 4px;
+            margin: 0;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+
+        nav {
+            background-color: #dff8df;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff66b2;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+        section {
+            padding: 40px 60px;
+        }
+
+        h2 {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            display: inline-block;
+        }
+
+        
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info {
+            max-width: 60%;
+            opacity: 0;
+            animation: fadeSlideLeft 1.5s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .about img {
+            width: 450px;
+            height: 300px;
+            border-radius: 5px;
+            object-fit: cover;
+            border: 4px solid #dff8df;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: fadeSlideRight 1.5s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+#recap-video video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}  
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-links a i {
+    font-size: 22px;
+    color: #ff66b2;
+}
+
+.contact-links a:hover {
+    color: #ff66b2;
+    transform: scale(1.05);
+}
+
+
+        #contact {
+    background-color: #dff8df; /* greenish background */
+    padding: 40px 60px;
+    text-align: center;
+    border-radius: 12px; /* optional: soft rounded edges */
+}
+
+#contact h2 {
+    color: #000; /* make title readable on green background */
+    margin-bottom: 20px;
+}
+
+#contact p {
+    color: #000; /* make text readable */
+    margin: 8px 0;
+}
+
+        footer {
+            background-color: #2e3b36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+            .info {
+                max-width: 100%;
+            }
+            .box, .edu-photo, .hobby-photo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+    <header>
+        <h1>HI THERE! I'M GLAD YOU STOPPED BY</h1>
+        <p>HELLO, I'M NUR FARHAH SYAFINAZ BINTI MUHAMMAD ALFFIE SYAFIE</p>
+    </header>
+
+    <nav>
+        <a href="about.html">Farhah</a>
+	<a href="here.html">About Me</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friend</a>
+        <a href="collection.html">Collection</a>
+    </nav>
+
+<br>
+<center>
+<audio autoplay loop controls muted>
+  <source src="alpha.mp3" type="audio/mpeg">
+</audio>
+</center>
+
+    <!-- 🌷 About Me -->
+    <section id="about" class="about">
+        <div class="info">
+            <h2>🌷 About Me 🌷</h2>
+            <p>Hello everyone! I'm Farhah, a person who always says "don't waste money" but somehow ends up broke at the start of every month. I'm a gamer at heart, and you'll often find me playing Valorant, PUBG, Mobile Legends, FIFA, and almost every game out there. You could say I play like a professional (well, almost!). Currently, I'm a student at UiTM Sarawak, pursuing a Diploma in Information Management. This is my personal website, feel free to explore and get to know me better!</p>
+            <p><strong>Birthday:</strong> 18th July 2005</p>
+            <p><strong>Birth Place:</strong> Hospital Kota Bharu Kelantan</p>
+	    <p><strong>Position in Family:</strong> Eldest Child</p>
+            <p><strong>Race:</strong> Melayu Dusun</p>
+            <p><strong>Nationality:</strong> Malaysian</p>
+            <p><strong>Current Status:</strong> Student at University Teknologi Mara Kampus Samarahan, Sarawak</p>
+        </div>
+        <img src="saya.jpg" alt="My Photo">
+    </section>
+
+<section id="recap-video">
+    <center>
+        <video width="850" controls>
+            <source src="farhah.mp4" type="video/mp4">
+        </video>
+    </center>
+</section>
+
+ <section >
+<center>
+    <h2>Notes</h2>
+    <p>The song used on this page is P. Ramlee Saloma by ALPHA. This is a Malaysian song. The reason I chose it is because they are one of my favorite music bands in Malaysia, and their songs remind us of the most beautiful memories and moments.</p>
+      </section>
+
+
+
+
+      <section id="contact" class="contact">
+    <h2>📞 Contact Me 📞</h2>
+
+    <div class="contact-links">
+
+        <!-- Email -->
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+            <i class="fas fa-envelope"></i>
+            Gmail: farhahsyafinaz63@gmail.com
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/farhahsyfz_/" target="_blank">
+            <i class="fab fa-instagram"></i>
+            Instagram: @syafzlovesdheo
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://web.facebook.com/dheo1807" target="_blank">
+            <i class="fab fa-facebook"></i>
+            Facebook: Nur Farhah
+        </a>
+<br>
+	
+<p>Click One Of My Social Media To Know Me More</p>
+
+    </div>
+</section>
+
+    <footer>
+        <p>© 2025 Nur Farhah. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

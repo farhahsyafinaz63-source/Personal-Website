@@ -1,0 +1,385 @@
+
+<html>
+<head>
+    
+    <title>My Family</title>
+    <style>
+        
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            color: #333;
+            background-image: url('pamily.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+   .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff66b2;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+        /* 🌸 Animation Keyframes */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    
+               header {
+            background-image: url('hehe.jpg');
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 4px;
+            margin: 0;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+
+        nav {
+            background-color: #dff8df;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff66b2;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+        section {
+            padding: 40px 60px;
+        }
+
+        h2 {
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            display: inline-block;
+        }
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.popup-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeSlideIn 0.4s ease;
+}
+
+.close-btn {
+  cursor: pointer;
+  color: red;
+  font-size: 22px;
+  float: right;
+}
+
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .photo {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .photo p {
+            padding: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+        footer {
+            background-color: #2e3b36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .photo {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+    <header>
+        <h1>THE PEOPLE I CALL HOME</h1>
+        <p>💖 OUR MEMORIES TOGETHER ARE PRICELESS 💖</p>
+    </header>
+
+<nav>
+        <a href="about.html">Farhah</a>
+	<a href="here.html">About Me</a>
+        <a href="family.html">Family</a>
+	<a href="friend.html">Friend</a>
+        <a href="collection.html">Collection</a>
+    
+    </nav>
+
+<br>
+<center>
+<audio autoplay loop controls muted>
+  <source src="rahsia.mp3" type="audio/mpeg">
+</audio>
+</center>
+
+
+    <section>
+<center>
+        <h2>👨‍👨‍👧‍👦 HOME IN FRAMES 👨‍👨‍👧‍👦 </h2>
+<center>
+        <div class="gallery">
+         <div class="photo" onclick="openPopup('parentsPopup')">
+    <img src="umiayah.jpg">
+    <p>This is my cute parents.</p>
+</div>
+
+<!-- POPUP FOR PARENTS -->
+<div id="parentsPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('parentsPopup')">&times;</span>
+    <h3>My Parents</h3>
+    <p>👨 My father is an engineer at a company in Singapore. His name is Muhammad Alffie Syafie was born in 1978</p>
+    <p>👩 My mother is a lawyer at Sabah. Her name is Nur Syahida Min. She was born in 1983</p>
+    <p>Married for 21 years ❤️</p>
+  </div>
+</div>
+
+            <div class="photo" onclick="openPopup('familyPopup')">
+    <img src="myfamily.jpg">
+    <p>This is us during Hari Raya Aildilfitri</p>
+</div>
+
+<div id="familyPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('familyPopup')">&times;</span>
+    <h3>US</h3>
+    <p>My family is the greatest value in my life</p>
+    <p>I love 7 of us!</p>
+  </div>
+</div>
+
+
+
+            <div class="photo" onclick="openPopup('siblingsPopup')">
+    <img src="siblings.jpg">
+    <p>My siblings and I.</p>
+</div>
+
+<div id="siblingsPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('siblingsPopup')">&times;</span>
+    <h3>My Siblings</h3>
+    <p>There is a big age gap between my sibling and me. I am 20 years old, and my second sibling is 17 years old.</p>
+    <p>We love spending time together!</p>
+  </div>
+</div>
+
+            <div class="photo" onclick="openPopup('qiqiPopup')">
+    <img src="qiqi.jpg">
+    <p>My second sister</p>
+</div>
+
+<div id="qiqiPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('qiqiPopup')">&times;</span>
+    <h3>Nur Farqihah</h3>
+    <p>She was born in 2008. Currently studying at SMK and taking her SPM</p>
+  </div>
+</div>
+
+            <div class="photo" onclick="openPopup('mirulPopup')">
+    <img src="mirul.jpg">
+    <p>My younger brother</p>
+</div>
+
+<div id="mirulPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('mirulPopup')">&times;</span>
+    <h3>Muhammad Fahmirul</h3>
+    <p>She was born in 2009. He is a racer from Sabah in the Honda team with the number 13</p>
+  </div>
+</div>
+
+            <div class="photo" onclick="openPopup('familycPopup')">
+    <img src="familyc.jpg">
+    <p>My family from Chinese side</p>
+</div>
+
+<div id="familycPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup('familycPopup')">&times;</span>
+    <h3>My father side</h3>
+    <p>Mostly, my father's side is Chinese and Japanese because my great-grandmother was once forced to marry one of the Japanese soldiers during the war.</p>
+  </div>
+</div>
+
+            <div class="photo">
+                <img src="familyk.jpg" alt="Family Photo 7">
+                <p>My uncle's wedding at Sabah.</p>
+            </div>
+<div class="photo">
+                <img src="familytrip.jpg" alt="Family Photo 6">
+                <p>Spending quality time with family</p>
+            </div>
+<div class="photo">
+                <img src="cw.jpg" alt="Family Photo 6">
+                <p>Me and my two little sister that gap more than 10 years</p>
+            </div>
+
+        </div>
+    </section>
+<br>
+<br>
+<br>
+
+<section >
+<center>
+    <h2>Notes</h2>
+    <p style="color: #ffffff;">The song used on this page is Rahsia Tuhan by Noh Salleh. This is a Malaysian song. The reason I chose this song is that if you have ever watched the Malaysian film Babah, the story is about a family but focuses a lot on the figure of a father. This song is the main theme of the film, and the story is very emotional. I use this song to remember my family because all my family members are a divine secret that has been given to me.</p>
+      </section>
+
+    <footer>
+        <p>Created by Nur Farhah © 2025</p>
+    </footer>
+
+<script>
+function openPopup(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+function closePopup(id) {
+  document.getElementById(id).style.display = "none";
+}
+</script>
+
+</body>
+</html>

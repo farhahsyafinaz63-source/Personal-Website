@@ -1,0 +1,294 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5fff5;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff66b2;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+        /* 🌸 Animation Keyframes */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    
+               header {
+            background-image: url('hehe.jpg');
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 4px;
+            margin: 0;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+
+        nav {
+            background-color: #dff8df;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff66b2;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+        section {
+            padding: 40px 60px;
+        }
+
+        h2 {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            display: inline-block;
+        }
+
+
+
+    .friend-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .light-green {
+      background-color: #ffffff; 
+    }
+
+    .white {
+      background-color: #e6f9e6;
+    }
+
+    .friend-section h2 {
+      color:#1c3a1c;
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .friend-section p {
+      width: 1000px;
+      margin: 0 auto 25px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .friend-photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .friend-photos img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .friend-photos img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+            background-color: #2e3b36;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+    @media (max-width: 768px) {
+      .friend-photos img {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+<script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+  <header>
+    <h1>FOREVER IN FRIENDSHIP</h1>
+    <p>👥 EVEN AFTER ALL THESE YEARS, OUR FRIENDSHIP STILL FEELS LIKE RECESS TIME! 👥 </p>
+  </header>
+
+<nav>
+       <a href="about.html">Farhah</a>
+        <a href="here.html">About Me</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friend</a>
+        <a href="collection.html">Collection</a>
+    
+    </nav>
+
+<br>
+<center>
+<audio autoplay loop controls muted>
+  <source src="jacob.mp3" type="audio/mpeg">
+</audio>
+</center>
+
+  <section class="friend-section light-green">
+    <h2>Friend Since Childhood 👧</h2>
+    <p>These are my childhood friends whom I grew up with. We used to play, laugh, and share sweet memories together. The one wearing clothes is Siti, and the one wearing white is Ain. They have been my friends since primary and secondary school.</p>
+    <div class="friend-photos">
+      <img src="friend.jpg" alt="Childhood Friend 1">
+      <img src="friend1.jpg" alt="Childhood Friend 2">
+    </div>
+  </section>
+
+  <section class="friend-section white">
+    <h2>Friend From School Days🎓</h2>
+    <p>These are my high school friends from SMK Keningau II, where I studied from ages 13 to 17. We shared many memorable moments, from classes and activities to fun times during breaks. I’m grateful for their friendship, support, and all the laughter we shared throughout those years..</p>
+    <div class="friend-photos">
+      <img src="f1.jpg" alt="High School Friend 1">
+      <img src="f2.jpg" alt="High School Friend 1">
+      <img src="f3.jpg" alt="High School Friend 2">
+      <img src="f4.jpg" alt="High School Friend 2">
+      <img src="f5.jpg" alt="High School Friend 2">
+      <img src="f6.jpg" alt="High School Friend 2">
+      <img src="hh.jpg" alt="High School Friend 2">
+    </div>
+  </section>
+
+  <section class="friend-section light-green">
+    <h2>Friend From University 🏫</h2>
+    <p>These are my friends at Universiti in Sarawak, and most of them are from Sarawak. Many of my friends are also from the Komander Kesatria co-curriculum. The third picture shows my closest friends, Rasiqah, Fatihah, Hasimah, Vannie, and Dayang. Also dont forget my beloved friend Akma, Anis, Amirah, and Hazwan. My university friends are like family. We work on projects, hang out between classes, and share great moments together.</p>
+    <div class="friend-photos">
+      <img src="h1.jpg" alt="University Friend 1">
+      <img src="h2.jpg" alt="University Friend 2">
+      <img src="h3.jpg" alt="University Friend 1">
+      <img src="h4.jpg" alt="University Friend 1">
+      <img src="h5.jpg" alt="University Friend 1">
+      <img src="kdr.jpg" alt="University Friend 1">
+      <img src="f7.jpg" alt="University Friend 1">
+    </div>
+  </section>
+
+  <section class="friend-section white">
+    <h2>Friend From Internship 💼</h2>
+    <p>These are my internship friends from my time at Majlis Daerah Keningau. We spent our days learning, working together, and sharing fun moments. I enjoyed meeting new people, making memories, and experiencing what it’s like to be part of a professional team.</p>
+    <div class="friend-photos">
+      <img src="d1.jpg" alt="Internship Friend 1">
+      <img src="d2.jpg" alt="Internship Friend 2">
+      <img src="d3.jpg" alt="Internship Friend 1">
+      <img src="d4.jpg" alt="Internship Friend 1">
+      <img src="d5.jpg" alt="Internship Friend 1">
+      <img src="d6.jpg" alt="Internship Friend 1">
+      <img src="d8.jpg" alt="Internship Friend 1">
+
+    </div>
+  </section>
+
+<section >
+<center>
+    <h2>Notes</h2>
+    <p>The song used on this page is All My Friends by Jacob Sartorius. This was one of my favorite songs during my childhood. The song is about friends who are always there for us.</p>
+      </section>
+
+  <footer>
+    <p>Created by Nur Farhah © 2025</p>
+  </footer>
+</body>
+</html>

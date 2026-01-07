@@ -1,0 +1,362 @@
+<html>
+<head>
+  <title>My Collection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+   .heart {
+      position: fixed;
+      top: -10px;
+      color: #ff66b2;
+      font-size: 20px;
+      animation: fall linear forwards;
+      z-index: 0;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+        /* 🌸 Animation Keyframes */
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+    
+               header {
+            background-image: url('hehe.jpg');
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 5px black;
+            padding: 70px 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            letter-spacing: 4px;
+            margin: 0;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #ffffff;
+            opacity: 0;
+            animation: fadeSlideIn 1.2s ease-out forwards;
+            animation-delay: 0.8s;
+        }
+
+
+        nav {
+            background-color: #dff8df;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: white;
+            transform: scale(1.1);
+        }
+
+nav a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff66b2;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+        section {
+            padding: 40px 60px;
+        }
+
+        h2 {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            display: inline-block;
+        }
+
+    section {
+      padding: 40px;
+    }
+
+    .travel {
+      background-color: #ffffff; 
+    }
+
+    .shopping {
+      background-color:#d8f3dc; 
+    }
+
+    .books {
+      background-color: #ffffff; 
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d6a4f;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .content img {
+      width: 260px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .description {
+      max-width: 1000px;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2e3b36;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+<script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+
+  <header>
+    <h1>FRAGMENTS OF MY LIVES</h1>
+    <p>🧐 WHERE MY MEMORIES AND FAVORITE THINGS LIVE 🧐</p>
+  </header>
+
+<nav>
+	<a href="about.html">Farhah</a>
+        <a href="here.html">About Me</a>
+        <a href="family.html">Family</a>
+        <a href="friend.html">Friend</a>
+        <a href="collection.html">Collection</a>
+</nav>
+
+<br>
+<center>
+<audio autoplay loop controls muted>
+  <source src="pencuri.mp3" type="audio/mpeg">
+</audio>
+</center>
+
+  <section class="travel">
+    <center><h2>🚗 Tiny Rides, Big Dreams 🚗</h2></center>
+    <div class="content">
+    <div>
+      <img src="car1.jpg">
+     <center> <p class="title">20 Toyota GR Supra</p></center>
+    </div>
+    <div>
+      <img src="car20.jpg">
+      <center><p class="title">GT Nissan 35GT-RR</p></center>
+    </div>
+    <div>
+      <img src="car33.jpg">
+      <center><p class="title">94 Toyota Supra Tooned</p></center>
+    </div>
+    <div>
+      <img src="car10.jpg">
+      <center><p class="title">Nissan Skyline GT-R 32</p></center>
+    </div>
+    <div>
+      <img src="car30.jpg">
+      <center><p class="title">87 Ford Sierra</p></center>
+    </div>
+<center>
+    <p class="description">
+      My collection is all about Hot Wheels. Those tiny cars bring me a lot of excitement. I love looking at their colorful designs and creative details. Every car has its own story, and I enjoy collecting them as a hobby. My favorite car is the Toyota because it’s stylish, fast, and reminds me of real cars. I hope to drive one day.
+    </p>
+</center>
+  </section>
+
+
+  <section>
+    <center><h2>🐱 Adorable Whiskers 🐱</h2></center>
+    <div class="content">
+    <div>
+      <img src="makbuyung.jpg">
+      <center><p class="title">I name her, Mak Buyung</p></center>
+    </div>
+    <div>
+      <img src="cucur.jpg">
+      <center><p class="title">This is Cucur</p></center>
+    </div>
+    <div>
+      <img src="gemoy1.jpg">
+      <center><p class="title">BIG cat at my college. Gemoy.</p></center>
+    </div>
+    <div>
+      <img src="mulu.jpg">
+      <center><p class="title">This is Tedah</p></center>
+    </div>
+    <div>
+      <img src="catmj.jpg">
+      <center><p class="title">I called him Handsome Boy</p></center>
+    </div>
+  </div>
+<center>
+    <p>
+      All the pictures in my collection were taken around my college, UiTM. There are so many cute cats here, and I can’t resist stopping by to see them every time I walk past. Each cat has its own personality, some are playful, some are calm, but all of them are adorable. I love taking their photos and giving them a little pet whenever I can.
+    </p>
+</center>
+  </section>
+
+  <section>
+  <center><h2>📚 Cherished Stories 📚</h2></center>
+  <div class="content">
+    <div>
+      <img src="dheo.jpg" alt="Book 1">
+     <center> <p class="title">Dheo’s</p></center>
+    </div>
+    <div>
+      <img src="alpha.jpg" alt="Book 2">
+      <center><p class="title">Dr. Alpha Male</p></center>
+    </div>
+    <div>
+      <img src="dia.jpg" alt="Book 3">
+      <center><p class="title">Dia Tetap Sempurna</p></center>
+    </div>
+    <div>
+      <img src="miesposa.jpg" alt="Book 4">
+     <center> <p class="title">Mi Esposa</p></center>
+    </div>
+    <div>
+      <img src="king.jpg" alt="Book 5">
+      <center><p class="title">King Haidar</p></center>
+    </div>
+  </div>
+  <center>
+    <p class="description">
+      This is my top 5 fiction Malay novel...
+    </p>
+</div>
+<center>
+    <p class="description">
+      This is my top 5 fiction Malay novel. Start from left is Dheo from Anjell, Dr.Alpha Male by Anjell, Dia Tetap Sempurna by Anjell, Mi Esposa by Huda Najwa, and King Haidar by Anjell. Reading helps me relax and learn new things. My favorite genres are romance and mystery.Books make me imagine, dream, and explore different worlds from my room.
+    </p>
+<center>
+  </section>
+
+<section>
+ <center> <h2>🥰 Gallery Of ME 🥰</h2></center>
+  <div class="content">
+    <div>
+      <img src="me1.jpg" alt="Book 1">
+      <center><p class="title">Me</p></center>
+    </div>
+    <div>
+      <img src="me2.jpg" alt="Book 2">
+     <center> <p class="title">Me at Gunung Serapi</p></center>
+    </div>
+    <div>
+      <img src="me3.jpg" alt="Book 3">
+    <center>  <p class="title">Me during Hari Raya</p></center>
+    </div>
+    <div>
+      <img src="me4.jpg" alt="Book 4">
+     <center> <p class="title">Just me During Family Day </p></center>
+    </div>
+    <div>
+      <img src="me6.jpg" alt="Book 5">
+      <center><p class="title">Me at Gunung Kinabalu</p></center>
+    </div>
+
+<center>
+    <p class="description">
+      This gallery is a collection of my favorite photos that capture moments from my daily life. Each picture shows a bit of who I am like my personality, emotions, and memories. I love keeping these photos as reminders of happy times and how much I’ve grown.
+    </p>
+<center>
+  </section>
+
+<section >
+<center>
+    <h2>Notes</h2>
+    <p>The song used on this page is Pencuri Hati by Mark Adam. This is a Malaysian song. I chose it because it is a Malaysian song that I often listened to when I was a child. I even memorized it, so I thought of including it in my collection section</p>
+      </section>
+
+  <footer>
+    <p>Created by Nur Farhah © 2025</p>
+  </footer>
+
+</body>
+</html>
